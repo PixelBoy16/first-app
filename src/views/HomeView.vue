@@ -5,7 +5,8 @@ import FormSignIn from '../components/forms/FormSignIn.vue'
 
 <template>
   <main>
+    Home Page
     <!-- <TheWelcome /> -->
-    <FormSignIn />
+    <!-- <FormSignIn /> -->
   </main>
 </template>
