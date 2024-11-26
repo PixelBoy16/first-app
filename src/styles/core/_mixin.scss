@@ -1,0 +1,71 @@
+// Media queries breakpoints
+$screen-xs: 576px;
+$screen-sm: 640px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+
+// Small devices
+@mixin screen-xs {
+  @media (max-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin screen-xs-min {
+  @media (min-width: #{$screen-xs + 1}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin screen-sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin screen-sm-min {
+  @media (min-width: #{$screen-sm + 1}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin screen-md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin screen-md-min {
+  @media (min-width: #{$screen-md + 1}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin screen-lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin screen-lg-min {
+  @media (min-width: #{$screen-lg + 1}) {
+    @content;
+  }
+}
+
+// Extra Xl devices
+@mixin screen-xl {
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin screen-xl-min {
+  @media (min-width: #{$screen-xl + 1}) {
+    @content;
+  }
+}
