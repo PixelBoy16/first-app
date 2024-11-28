@@ -57,7 +57,7 @@ export default defineComponent({
       console.log(response);
 
       if (response) { 
-        router.push('/about');
+        router.push('/');
       } else {
         console.log('Login failed');
       }
