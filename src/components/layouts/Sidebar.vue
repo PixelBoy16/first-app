@@ -25,8 +25,7 @@ const active = (path: string) => {
 const handleSignOut = async () => {
   const router = useRouter()
 
-  await AuthService.signOut()
-  router.push('/')
+  AuthService.signOut(() => router.push('/login'))
 }
 </script>
 
