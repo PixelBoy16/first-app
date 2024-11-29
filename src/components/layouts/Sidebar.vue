@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { AuthService } from '@/services'
 import clsx from 'clsx'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { RouterLink } from 'vue-router'
 
 import IconBoard from '../icons/IconBoard.vue'
@@ -23,8 +23,10 @@ const active = (path: string) => {
 }
 
 const handleSignOut = () => {
+  const router = useRouter()
+
   AuthService.signOut(() => {
-    window.location.reload()
+    router.push('/login')
   })
 }
 </script>
