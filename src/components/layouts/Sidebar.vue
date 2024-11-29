@@ -12,10 +12,6 @@ const route = useRoute()
 
 const active = (path: string) => {
   const isActive = route.path === path
-  // return clsx(
-  //   'transition-all px-2 py-1.5 ease-in rounded-md flex gap-2 items-center',
-  //   isActive ? 'bg-theme text-white hover:text-white' : 'text-black',
-  // )
 
   return {
     text: clsx(
@@ -28,7 +24,7 @@ const active = (path: string) => {
 
 const handleSignOut = () => {
   AuthService.signOut(() => {
-    window.location.href = '/login'
+    window.location.reload()
   })
 }
 </script>
