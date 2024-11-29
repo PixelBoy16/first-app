@@ -34,8 +34,8 @@ export class AuthService {
   static signOut(cb?: Function): void {
     cookie.remove(configs.APP_AUTH_ACCESS)
     cookie.remove(configs.APP_AUTH_REFRESH)
-
     localStorage.removeItem('user')
+
     if (cb) cb()
   }
 

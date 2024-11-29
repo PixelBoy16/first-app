@@ -22,12 +22,11 @@ const active = (path: string) => {
   }
 }
 
-const handleSignOut = () => {
+const handleSignOut = async () => {
   const router = useRouter()
 
-  AuthService.signOut(() => {
-    router.push('/login')
-  })
+  await AuthService.signOut()
+  router.push('/')
 }
 </script>
 
