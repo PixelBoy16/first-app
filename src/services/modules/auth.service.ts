@@ -35,6 +35,7 @@ export class AuthService {
     cookie.remove(configs.APP_AUTH_ACCESS)
     cookie.remove(configs.APP_AUTH_REFRESH)
 
+    localStorage.removeItem('user')
     if (cb) cb()
   }
 

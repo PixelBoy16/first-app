@@ -3,14 +3,14 @@ import FormSignIn from '../components/forms/FormSignIn.vue'
 </script>
 
 <template>
-  <div class="ui--view-main">
-    <h1>This is an Login page</h1>
+  <div class="ui--login-screen">
     <FormSignIn />
   </div>
 </template>
 
 <style scoped lang="scss">
-.ui--view-main {
-  @apply bg-yellow-500;
+.ui--login-screen {
+  @apply flex justify-center items-center min-h-screen bg-white bg-no-repeat bg-cover bg-center;
+  background-image: url('/static/images/bg-screen.jpg');
 }
 </style>
