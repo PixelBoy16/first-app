@@ -7,6 +7,7 @@ import { RouterLink } from 'vue-router'
 import IconBoard from '../icons/IconBoard.vue'
 import IconUser from '../icons/IconUser.vue'
 import IconLogout from '../icons/IconLogout.vue'
+import { useAuthStore } from '@/stores/auth.store'
 
 const route = useRoute()
 
@@ -20,10 +21,6 @@ const active = (path: string) => {
     ),
     icon: clsx('', isActive ? 'text-white ' : 'text-black'),
   }
-}
-
-const handleSignOut = async () => {
-  AuthService.signOut(() => (window.location.href = '/login'))
 }
 </script>
 
@@ -47,5 +44,31 @@ const handleSignOut = async () => {
     </div>
   </aside>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'SidebarComponent',
+  data() {
+    return {
+      $router: null as any,
+    }
+  },
+  methods: {
+    async handleSignOut() {
+      const authStore = useAuthStore()
+      const response = await authStore.signOut()
+
+      if (response) {
+        this.$router.push('/login')
+      }
+    },
+  },
+  mounted() {
+    this.$router = useRouter()
+  },
+})
+</script>
 
 <style scoped></style>

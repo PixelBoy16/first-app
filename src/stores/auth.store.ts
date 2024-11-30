@@ -5,6 +5,7 @@ import * as configs from '@/constants/configs'
 import { AuthService } from '@/services'
 import type { FormSignIn } from '@/types/Form'
 import { cookie } from '@/utils/storage'
+import type { Router } from 'vue-router'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
@@ -60,6 +61,13 @@ export const useAuthStore = defineStore('auth', {
 
         return true
       }
+    },
+    async signOut(): Promise<boolean> {
+      return new Promise((resolve) => {
+        AuthService.signOut(() => {
+          resolve(true)
+        })
+      })
     },
   },
 })
