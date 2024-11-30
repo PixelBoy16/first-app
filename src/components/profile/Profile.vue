@@ -91,7 +91,7 @@ const MENU_TAB = [
           <p class="text-theme uppercase">{{ user.role }}</p>
         </div>
         <div class="flex gap-1 items-center mt-1.5">
-          <IconPin class="w-4 text-black/50" />
+          <IconPin class="w-4 text-red-500" />
           <p class="text-sm text-black/60">{{ user.address.city }}</p>
         </div>
       </div>
